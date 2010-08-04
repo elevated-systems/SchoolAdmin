@@ -1,4 +1,4 @@
-from WindsorAdmin.roster.models import Location, Student
+from roster.models import Location, Student
 from django.contrib import admin
 
 class StudentAdmin(admin.ModelAdmin):

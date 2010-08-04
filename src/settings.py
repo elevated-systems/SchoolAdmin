@@ -1,7 +1,3 @@
-# Ensure we're in the project directory for the interactive shell in Eclipse.
-import os
-os.chdir('/Users/davemasselink/Documents/DjangoProjects/WindsorAdmin')
-
 # Django settings for WindsorAdmin project.
 
 DEBUG = True
@@ -15,12 +11,12 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/Users/davemasselink/Documents/DjangoProjects/WindsorAdmin/windsoradmin.db',                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.mysql',   # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'davemas1_windsordb',
+        'USER': 'davemas1_windsor',
+        'PASSWORD': 'preschool',
+        'HOST': 'davemasselink.com',            # Set to empty string for localhost.
+        'PORT': '',                             # Set to empty string for default.
     }
 }
 
@@ -79,13 +75,13 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'WindsorAdmin.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    "/Users/davemasselink/Documents/DjangoProjects/WindsorAdmin/templates/",
+    "/Users/davemasselink/sandbox/SchoolAdmin/templates/",
 )
 
 INSTALLED_APPS = (
@@ -94,9 +90,12 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
-    # Uncomment the next line to enable the admin:
+    # Admin install
     'django.contrib.admin',
-    'WindsorAdmin.roster',
-    'WindsorAdmin.resource_tracker',
-    'WindsorAdmin.human_resources',
+    # Installation of School Admin apps
+    'roster',
+    'resource_tracker',
+    'human_resources',
+    # DB Migration tools
+    'south',
 )
